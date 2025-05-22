@@ -1,0 +1,194 @@
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[]
+
+export interface Database {
+  public: {
+    Tables: {
+      profiles: {
+        Row: {
+          id: string
+          username: string | null
+          full_name: string | null
+          avatar_url: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id: string
+          username?: string | null
+          full_name?: string | null
+          avatar_url?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          username?: string | null
+          full_name?: string | null
+          avatar_url?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      badge_categories: {
+        Row: {
+          id: number
+          name: string
+          description: string | null
+          icon: string | null
+          color: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: number
+          name: string
+          description?: string | null
+          icon?: string | null
+          color?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: number
+          name?: string
+          description?: string | null
+          icon?: string | null
+          color?: string | null
+          created_at?: string
+        }
+      }
+      badges: {
+        Row: {
+          id: string
+          title: string
+          description: string | null
+          category_id: number | null
+          icon: string | null
+          color: string | null
+          border_width: number | null
+          is_template: boolean | null
+          created_by: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          title: string
+          description?: string | null
+          category_id?: number | null
+          icon?: string | null
+          color?: string | null
+          border_width?: number | null
+          is_template?: boolean | null
+          created_by?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          title?: string
+          description?: string | null
+          category_id?: number | null
+          icon?: string | null
+          color?: string | null
+          border_width?: number | null
+          is_template?: boolean | null
+          created_by?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      user_badges: {
+        Row: {
+          id: string
+          user_id: string
+          badge_id: string
+          earned_date: string
+          shared: boolean | null
+          likes: number | null
+          comments: number | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          badge_id: string
+          earned_date?: string
+          shared?: boolean | null
+          likes?: number | null
+          comments?: number | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          badge_id?: string
+          earned_date?: string
+          shared?: boolean | null
+          likes?: number | null
+          comments?: number | null
+          created_at?: string
+        }
+      }
+      badge_progress: {
+        Row: {
+          id: string
+          user_id: string
+          badge_id: string
+          progress: number | null
+          target: number | null
+          started_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          badge_id: string
+          progress?: number | null
+          target?: number | null
+          started_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          badge_id?: string
+          progress?: number | null
+          target?: number | null
+          started_at?: string
+          updated_at?: string
+        }
+      }
+      community_posts: {
+        Row: {
+          id: string
+          user_id: string
+          badge_id: string | null
+          content: string
+          likes: number | null
+          comments: number | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          badge_id?: string | null
+          content: string
+          likes?: number | null
+          comments?: number | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          badge_id?: string | null
+          content?: string
+          likes?: number | null
+          comments?: number | null
+          created_at?: string
+          updated_at?: string
+        }
+      }
+    }
+  }
+}
